@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.password);
         EditText c_password = (EditText) findViewById(R.id.cPassword);
         MaterialButton submit = (MaterialButton) findViewById(R.id.submitBtn);
+        MaterialButton display = (MaterialButton) findViewById(R.id.displayBtn);
 
         dbHandler = new DBHandler(MainActivity.this);
 
@@ -55,9 +57,13 @@ public class MainActivity extends AppCompatActivity {
                 phone.setText("");
                 password.setText("");
                 c_password.setText("");
+            }
+        });
 
-                Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
-                finish();
+        display.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ViewDetailsActivity.class);
                 startActivity(intent);
             }
         });

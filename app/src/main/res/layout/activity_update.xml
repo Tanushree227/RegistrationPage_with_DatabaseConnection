@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/program13_background1"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/signupTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registration Page"
+        android:text="Update Page"
         android:textColor="@color/white"
         android:gravity="center"
         android:textSize="35dp"
@@ -19,7 +19,7 @@
         android:layout_margin="20dp"/>
 
     <EditText
-        android:id="@+id/userName"
+        android:id="@+id/userNameUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signupTitle"
@@ -33,10 +33,10 @@
         android:drawablePadding="10dp"/>
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/emailUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userName"
+        android:layout_below="@+id/userNameUpdate"
         android:hint="eg: tanu@example.com"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -47,10 +47,10 @@
         android:drawablePadding="10dp"/>
 
     <EditText
-        android:id="@+id/phone"
+        android:id="@+id/phoneUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
+        android:layout_below="@+id/emailUpdate"
         android:hint="eg: 9876543210"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -61,10 +61,10 @@
         android:drawablePadding="10dp"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/phone"
+        android:layout_below="@+id/phoneUpdate"
         android:hint="eg: Xyz%234_"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -76,10 +76,10 @@
         android:drawablePadding="10dp"/>
 
     <EditText
-        android:id="@+id/cPassword"
+        android:id="@+id/cPasswordUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/passwordUpdate"
         android:hint="eg: Xyz%234_"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -90,23 +90,24 @@
         android:drawableLeft="@drawable/baseline_password_24"
         android:drawablePadding="10dp"/>
 
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitBtn"
+        android:id="@+id/updateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:layout_below="@+id/cPassword"
+        android:text="Update"
+        android:layout_below="@+id/cPasswordUpdate"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#fca311"
         android:layout_marginTop="20dp"
         android:textSize="25sp"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/displayBtn"
+        android:id="@+id/deleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display"
-        android:layout_below="@+id/submitBtn"
+        android:text="Delete"
+        android:layout_below="@+id/updateBtn"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#fca311"
         android:layout_marginTop="20dp"

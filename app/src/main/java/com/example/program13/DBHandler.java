@@ -25,7 +25,6 @@ public class DBHandler extends SQLiteOpenHelper {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
-    // below method is for creating a database by running a sqlite query
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + " ("
@@ -52,30 +51,33 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    @SuppressLint("Range")
-    public ArrayList<HashMap<String, String>> getUsers()
+    public ArrayList<UserModal> readUsers()
     {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<HashMap<String, String>> userList = new ArrayList<>();
-        String query = "SELECT userName FROM " +TABLE_NAME;
-        Cursor cursor = db.rawQuery(query, null);
-        while (cursor.moveToNext())
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursorUser = db.rawQuery("SELECT * FROM " +TABLE_NAME, null);
+        ArrayList<UserModal> userModalArrayList = new ArrayList<>();
+        if (cursorUser.moveToFirst())
         {
-            HashMap<String, String> user = new HashMap<>();
-            user.put("userName", cursor.getString(cursor.getColumnIndex(USERNAME)));
-            userList.add(user);
+            do {
+                userModalArrayList.add(new UserModal(cursorUser.getString(1),
+                        cursorUser.getString(2),
+                        cursorUser.getString(3),
+                        cursorUser.getString(4),
+                        cursorUser.getString(5)));
+            } while (cursorUser.moveToNext());
         }
-        return userList;
+        cursorUser.close();
+        return userModalArrayList;
     }
 
-    public void DeleteUser(int userId)
+    public void DeleteUser(String username)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, ID_COL+" = ?", new String[]{String.valueOf(userId)});
+        db.delete(TABLE_NAME, "name=?", new String[]{username});
         db.close();
     }
 
-    public int UpdateUserDetails(String email, String phone, String password, String cnfrm_Password, int id)
+    public void UpdateUserDetails(String username, String email, String phone, String password, String cnfrm_Password)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -83,8 +85,8 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(PHONE, phone);
         values.put(PASSWORD, password);
         values.put(C_PASSWORD, cnfrm_Password);
-        int count = db.update(TABLE_NAME,values, ID_COL+ " = ?", new String[]{String.valueOf(id)});
-        return count;
+        db.update(TABLE_NAME,values, " name=?", new String[]{username});
+        db.close();
     }
 
     @Override

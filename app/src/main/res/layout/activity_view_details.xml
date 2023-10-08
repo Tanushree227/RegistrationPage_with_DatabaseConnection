@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ViewDetailsActivity">
 
-    <ListView
-        android:id="@+id/userList"
-        android:dividerHeight="1dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_below="@+id/userList"
         android:text="Back"
         android:layout_marginTop="20dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RVUsers"
+        android:layout_below="@+id/btnBack"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
