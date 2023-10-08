@@ -20,6 +20,7 @@
 
     <EditText
         android:id="@+id/userNameUpdate"
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signupTitle"
@@ -34,6 +35,7 @@
 
     <EditText
         android:id="@+id/emailUpdate"
+        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userNameUpdate"
@@ -48,6 +50,7 @@
 
     <EditText
         android:id="@+id/phoneUpdate"
+        android:inputType="phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/emailUpdate"
