@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
         android:orientation="vertical">
 
         <TextView
@@ -21,24 +20,6 @@
             android:padding="3dp"
             android:text="User Name"
             android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/emailtext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="User Email"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/phonetext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="3dp"
-            android:text="User Phone"
-            android:textColor="@color/black" />
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

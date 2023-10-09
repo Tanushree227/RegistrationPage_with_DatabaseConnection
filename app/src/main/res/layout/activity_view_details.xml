@@ -2,16 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/program13_background1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ViewDetailsActivity">
 
-    <Button
+    <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Back"
+        android:background="@drawable/baseline_cancel_24"
         android:layout_marginTop="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -44,7 +45,7 @@ public class ViewDetailsActivity extends AppCompatActivity {
         userRV.setLayoutManager(linearLayoutManager);
         userRV.setAdapter(userAdapter);
 
-        Button backBtn = (Button) findViewById(R.id.btnBack);
+        ImageButton backBtn = (ImageButton) findViewById(R.id.btnBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

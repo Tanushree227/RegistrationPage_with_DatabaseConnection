@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class UpdateActivity extends AppCompatActivity {
@@ -30,6 +31,7 @@ public class UpdateActivity extends AppCompatActivity {
         cPasswordUpdate = findViewById(R.id.cPasswordUpdate);
         update = findViewById(R.id.updateBtn);
         delete = findViewById(R.id.deleteBtn);
+        ImageButton back = (ImageButton) findViewById(R.id.backUpdate);
 
         dbHandler = new DBHandler(UpdateActivity.this);
 
@@ -62,6 +64,13 @@ public class UpdateActivity extends AppCompatActivity {
                 Toast.makeText(UpdateActivity.this, "Deleted the User", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(UpdateActivity.this, ViewDetailsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }

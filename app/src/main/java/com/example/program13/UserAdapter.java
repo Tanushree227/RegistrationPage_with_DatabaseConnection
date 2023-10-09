@@ -18,13 +18,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        private TextView userName, emailT, phoneT;
+        private TextView userName;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             userName = itemView.findViewById(R.id.usertext);
-            emailT = itemView.findViewById(R.id.emailtext);
-            phoneT = itemView.findViewById(R.id.phonetext);
         }
     }
 
@@ -45,8 +43,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         UserModal modal = userModalArrayList.get(position);
         holder.userName.setText(modal.getUserName());
-        holder.emailT.setText(modal.getEmail());
-        holder.phoneT.setText(modal.getPhone());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

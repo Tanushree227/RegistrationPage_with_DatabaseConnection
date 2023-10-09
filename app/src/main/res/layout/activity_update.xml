@@ -7,6 +7,16 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:layout_below="@+id/backUpdate"
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:background="@drawable/baseline_cancel_24"
+        android:layout_marginTop="20dp"/>
+
     <TextView
         android:id="@+id/signupTitle"
         android:layout_width="match_parent"
